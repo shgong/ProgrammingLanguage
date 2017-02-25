@@ -1,0 +1,1222 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"calss",
+				"className"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"border-",
+				"border-width"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"mobile",
+				"MobileRedirect"
+			],
+			[
+				"tree",
+				"treeContent"
+			],
+			[
+				"Current",
+				"currentProject"
+			],
+			[
+				"di",
+				"diretoryTreeToObj"
+			],
+			[
+				"pdd",
+				"padding-left"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"n",
+				"next"
+			],
+			[
+				"Findl",
+				"Findloop"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"max",
+				"maxstart"
+			],
+			[
+				"as",
+				"as_board"
+			],
+			[
+				"is",
+				"is_valid"
+			],
+			[
+				"Max",
+				"MaxValueValidator"
+			],
+			[
+				"tict",
+				"tictactoe_game_do_move"
+			],
+			[
+				"get_",
+				"get_object_or_404"
+			],
+			[
+				"user",
+				"user_home"
+			],
+			[
+				"first",
+				"first_player"
+			],
+			[
+				"Gma",
+				"GamesManager"
+			],
+			[
+				"boardgames",
+				"boardgames_home"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"border",
+				"border-box"
+			],
+			[
+				"padding-",
+				"padding-left"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"backgo",
+				"background-image"
+			],
+			[
+				"background",
+				"background-image"
+			],
+			[
+				"keywor",
+				"keywordList"
+			],
+			[
+				"master",
+				"master_dict"
+			],
+			[
+				"keyword",
+				"keyword_set"
+			],
+			[
+				"ev",
+				"e_value"
+			],
+			[
+				"siilar",
+				"similar"
+			],
+			[
+				"Keyword",
+				"keyword_set"
+			],
+			[
+				"simila",
+				"similarPairs"
+			],
+			[
+				"similar",
+				"similar_pairs"
+			],
+			[
+				"simialr",
+				"similarity_count"
+			],
+			[
+				"similari",
+				"similarity_count"
+			],
+			[
+				"simlar",
+				"similaritybyword"
+			],
+			[
+				"keyw",
+				"keyword_set"
+			],
+			[
+				"simil",
+				"similarity_count"
+			],
+			[
+				"word",
+				"word_usage"
+			],
+			[
+				"index",
+				"index_frequency"
+			],
+			[
+				"output",
+				"outputdir"
+			],
+			[
+				"save",
+				"save_data"
+			],
+			[
+				"stop",
+				"stopwords"
+			],
+			[
+				"Board",
+				"BoardManager"
+			],
+			[
+				"Ini",
+				"InitializeList"
+			],
+			[
+				"enem",
+				"enemeyCount"
+			],
+			[
+				"instan",
+				"Instantiate"
+			],
+			[
+				"rows",
+				"rows-1"
+			],
+			[
+				"colum",
+				"columns-1"
+			],
+			[
+				"wall",
+				"wallCount"
+			],
+			[
+				"random",
+				"RandomPosition"
+			],
+			[
+				"G",
+				"GameObject"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "Standard ML of New Jersey v110.80 [built: Fri Aug 19 07:49:58 2016]\n- \n- 1 + 1;\nval it = 2 : int\n- ",
+			"settings":
+			{
+				"buffer_size": 99,
+				"line_ending": "Unix",
+				"name": "*REPL* [sml]",
+				"scratch": true
+			}
+		},
+		{
+			"file": "hw0provided.sml",
+			"settings":
+			{
+				"buffer_size": 293,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/SML (Standard ML)/SML.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"repl sml",
+				"SublimeREPL: SML"
+			],
+			[
+				"setsyn",
+				"Set Syntax: SML"
+			],
+			[
+				"ocaml",
+				"SublimeREPL: OCaml"
+			],
+			[
+				"sml",
+				"Set Syntax: SML"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"package c",
+				"Package Control: List Packages"
+			],
+			[
+				"sublimeREPL: SML",
+				"SublimeREPL: SML"
+			],
+			[
+				"install pac",
+				"Package Control: Install Package"
+			],
+			[
+				"json",
+				"Pretty JSON: Validate"
+			],
+			[
+				"haskell",
+				"SublimeREPL: Haskell"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"formatt",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"list pac",
+				"Package Control: List Packages"
+			],
+			[
+				"html",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"cheat",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"markdwon cheat",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"vali",
+				"Pretty JSON: Validate"
+			],
+			[
+				"validat",
+				"Pretty JSON: Validate"
+			],
+			[
+				"open mark",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"markdown cheat",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"install pak",
+				"Package Control: Install Package"
+			],
+			[
+				"set syntax markdown",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"gfm",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"list p",
+				"Package Control: List Packages"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"set syntax mark",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"set syntax: mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"sytax mardown",
+				"Set Syntax: Markdown GFM"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pak",
+				"Package Control: Remove Package"
+			],
+			[
+				"list pa",
+				"Package Control: List Packages"
+			],
+			[
+				"package remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"installp",
+				"Package Control: Install Package"
+			],
+			[
+				"remove pakc",
+				"Package Control: Remove Package"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"markdown ex",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"prett",
+				"Pretty JSON: Validate"
+			],
+			[
+				"list pack",
+				"Package Control: List Packages"
+			],
+			[
+				"markmon",
+				"Preferences: Markmon Key Bindings – User"
+			],
+			[
+				"markmon ",
+				"Preferences: Markmon Settings – Default"
+			],
+			[
+				"markmon k",
+				"Preferences: Markmon Key Bindings – Default"
+			],
+			[
+				"list packages",
+				"Package Control: List Packages"
+			],
+			[
+				"markon",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"packag",
+				"Package Control: List Packages"
+			],
+			[
+				"intall",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/shgong/GitHub/uwpl"
+	],
+	"file_history":
+	[
+		"/Users/shgong/GitHub/uwpl/1.sml",
+		"/Users/shgong/GitHub/uwpl/hw0provided.sml",
+		"/Users/shgong/GitHub/uwpl/hw0test.sml",
+		"/Users/shgong/GitHub/uwpl/readme.md",
+		"/Volumes/My Passport/Class/2006-2013/名片夹/龚华.vcf",
+		"/Users/shgong/Documents/GameDesign/flux-todomvc/index.html",
+		"/Users/shgong/Documents/GameDesign/react-15.3.0/index.html",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Markdown/SublimeTextCheatsheet.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/SQL/sql.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Lisp/Structure and Interpretation of Computer Programs.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/javascript/nodejs.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Lisp/Structure and Interpretation of Computer Programs.",
+		"/Users/shgong/Documents/GameDesign/react-tutorial-master/public/api/comments",
+		"/Users/shgong/Documents/GameDesign/react-tutorial-master/public/css/base.css",
+		"/Users/shgong/Documents/GameDesign/react-15.3.0/src/helloworld.js",
+		"/Users/shgong/Documents/GameDesign/react-tutorial-master/public/index.html",
+		"/Users/shgong/Documents/GameDesign/reactcom/public/js/index.js",
+		"/Users/shgong/Documents/GameDesign/react-tutorial-master/public/scripts/example.js",
+		"/Users/shgong/Documents/GameDesign/react-tutorial-master/api/comments",
+		"/Users/shgong/Documents/GameDesign/react-15.3.0/js/helloworld.js",
+		"/Users/shgong/Documents/GameDesign/reactcom/public/index.html",
+		"/Users/shgong/Documents/GameDesign/Reigns.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Hadoop/Questions.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/40-49",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/14",
+		"/Users/shgong/GitHub/heroku-site/node_modules/ejs/test/fixtures/include-abspath.ejs",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Spark/Basics.md",
+		"/Users/shgong/workspala/tutorial/haskell/baby.hs",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Java/Hibernate/HQL.md",
+		"/Users/shgong/GitHub/heroku-site/data/data.json",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Scala/ScalaAdvanced.md",
+		"/Users/shgong/GitHub/sitec/index.html",
+		"/Users/shgong/GitHub/heroku-site/views/pages/note.ejs",
+		"/Users/shgong/GitHub/heroku-site/views/note/contents.ejs",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Index.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/0_Index.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Frameworks/Hortonworks.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Scala/0_Index.md",
+		"/Users/shgong/GitHub/heroku-site/views/note/sidebar.ejs",
+		"/Users/shgong/GitHub/heroku-site/views/partials/nav.ejs",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Scala/ScalaBasics.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/largefile/duyutalk-04282016",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Git.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/largefile/Mathew.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Reference/Mathew.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Hadoop/HadoopArchitecture.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Topics/REST.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Java/VincentZhang.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/git/heroku.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/python/questiones/027_Remove Element.py",
+		"/Users/shgong/GitHub/sitec/public/robots.txt",
+		"/Users/shgong/GitHub/sitec/public/js/app.js",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Hadoop/Flume.md",
+		"/Users/shgong/workspala/tutorial/src/LongLines/FindLongLines.scala",
+		"/Users/shgong/GitHub/heroku-site/filesys.js",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/60-69",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Link/Books.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Reference/LectureNotes-English.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Hadoop/Hive.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Hadoop/Hadoop.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Haskell/Haskell.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/javascript/angularexample/book.html",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/150-164",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/130-149",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/90-109",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/110-129",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/70-89",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/0",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/140-164",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/15",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/50-59",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/30-39",
+		"/Users/shgong/GitHub/AlgorithmArchive/Ruby/ruby.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/13",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/10",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/12",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/11",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/9",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/8",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/7",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/6",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/5",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/4",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/2",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/3",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/1",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/0.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Reference/LectureNotes.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/2.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/Spark/1.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Reference/Link.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/largefile/cca175/82",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Reference/Others.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/largefile/duyutalk-04282016.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/largefile/cca175/yulintalk.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/largefile/cca175/83.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/largefile/cca175/exam",
+		"/Users/shgong/GitHub/AlgorithmArchive/largefile/cca175",
+		"/Users/shgong/GitHub/heroku-site/public/script/angular-recursion.js",
+		"/Users/shgong/GitHub/AlgorithmArchive/c++/Puzzle/Pascal's Triangle II.cpp",
+		"/Users/shgong/GitHub/AlgorithmArchive/largefile/bigdata.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/datanotes/idea.md",
+		"/Users/shgong/GitHub/heroku-site/public/blogpost/2.md",
+		"/Users/shgong/GitHub/heroku-site/public/blogpost/3.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/algorithm/Algorithm Review.md",
+		"/Users/shgong/GitHub/AlgorithmArchive/c++/Puzzle/Generate Parentheses.cpp",
+		"/Users/shgong/GitHub/heroku-site/node_modules/express/node_modules/array-flatten/array-flatten.js",
+		"/Users/shgong/GitHub/heroku-site/node_modules/express/lib/application.js",
+		"/Users/shgong/GitHub/AlgorithmArchive/javascript/expressjs.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Link/EarthView.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Frameworks/Overview.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Spark/Pagerank.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Topics/DesignPattern.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Javascript/link.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Database/Link.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Database/RedisApplication.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/DataScience/Reference/EcosystemTable.md",
+		"/Users/shgong/GitHub/sitec/Readme.md",
+		"/Users/shgong/GitHub/heroku-site/views/pages/index.ejs",
+		"/Users/shgong/GitHub/heroku-site/public/stylesheets/app.css",
+		"/Users/shgong/GitHub/heroku-site/public/blogpost/1.md",
+		"/Users/shgong/GitHub/heroku-site/public/script/app.js",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Python/PythonBasic.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Management/ProjectManagement.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Link/Fun.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Link/Trivial.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Java/Hibernate/Hibernate.md",
+		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Java/0_Index.md"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Makes",
+			"f6f6f6",
+			"key",
+			"this.props",
+			"Avro Tool",
+			"avro-tool",
+			"split-by",
+			"Statistical",
+			"kafka",
+			"hbase",
+			"- ",
+			"flume in",
+			"formats",
+			"delete",
+			"delegation",
+			"**",
+			"close",
+			"315",
+			"305",
+			"center",
+			"2.3",
+			"# ",
+			"the above",
+			"\n<a-->",
+			"### ",
+			"[ABCD] - ",
+			"Q ",
+			"->",
+			"\n<a->",
+			"### ",
+			"[ABCD] - ",
+			"Q ",
+			"one of the above.",
+			"[ABCD] - ",
+			"Q ",
+			"map(",
+			"map(prin",
+			"_+_",
+			"curry",
+			"curring",
+			"marked.min.js",
+			"marked",
+			"immutable",
+			"location",
+			"contents",
+			"caff",
+			"Requisite",
+			"Some()",
+			"Some",
+			"Some()",
+			"  ",
+			"set",
+			"application master",
+			"Lines",
+			"ne",
+			"Ctrl",
+			"CMD",
+			"Select",
+			"All",
+			"Search",
+			"\n",
+			"scroll_lines",
+			"CMD",
+			"Ctrl",
+			"SHIFT",
+			"Shift",
+			"Ctrl",
+			" \n",
+			"control abstrac",
+			"control",
+			"control abstra",
+			"item",
+			"docstring",
+			"dict()",
+			"finalize",
+			"\\n\\n\\n",
+			"\\n\\n\\n\\n",
+			"\\n",
+			"list.make",
+			".make",
+			"make",
+			"range",
+			"trait",
+			"sealed",
+			"print _",
+			"_",
+			"array",
+			"calculate",
+			"deepcopy",
+			"is",
+			"are",
+			"questiones",
+			"first",
+			"Balancer",
+			"kill",
+			"balancer",
+			"sequence",
+			"linux",
+			"mutable",
+			"native",
+			"demo-Link",
+			"second level",
+			"Mapper",
+			"yarn",
+			"uarn",
+			"service",
+			"zookeeper",
+			"service",
+			"avro",
+			"HBASE",
+			"zookeeper",
+			"\\n# ",
+			"timeout",
+			"[]",
+			"int []",
+			"array",
+			"interface",
+			"observer",
+			"reference",
+			"pointerer",
+			"yarn",
+			" ",
+			"string",
+			"thread",
+			"string",
+			"interface",
+			"main",
+			"constructor"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"Data",
+			"## ",
+			"the rest",
+			"<a-->",
+			"<q-->\n### ",
+			"\n### ",
+			"<a-->",
+			"### ",
+			"-->",
+			"<a->",
+			"<q->\n### ",
+			"<a->",
+			"### ",
+			"one of the rest",
+			"<a->",
+			"### ",
+			"### \n",
+			"\\t\\t\n",
+			"Rows\n",
+			"SHIFT",
+			"CTRL",
+			"\\n## ",
+			"",
+			"Tuple",
+			"#### ",
+			" | ",
+			"",
+			".",
+			"\"thumb\":\"thumbnail",
+			"self.master_dict",
+			"",
+			" ",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Users/shgong/GitHub/uwpl"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 99,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 15,
+								"count": 13,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"auto_complete": true,
+							"auto_indent": false,
+							"detect_indentation": false,
+							"gutter": false,
+							"history_arrows": true,
+							"indent_subsequent_lines": false,
+							"line_numbers": false,
+							"repl": true,
+							"repl_external_id": "sml",
+							"repl_id": "83ff1081cb914640a7a3a5efc51af5d9",
+							"repl_restart_args":
+							{
+								"cmd":
+								[
+									"sml"
+								],
+								"cwd": "$file_path",
+								"encoding": "utf8",
+								"external_id": "sml",
+								"syntax": "Packages/SML (Standard ML)/sml.tmLanguage",
+								"type": "subprocess"
+							},
+							"repl_sublime2": false,
+							"smart_indent": false,
+							"spell_check": false,
+							"syntax": "Packages/SML (Standard ML)/sml.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "hw0provided.sml",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 293,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 0,
+								"count": 42,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"syntax": "Packages/SML (Standard ML)/sml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 122.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.haskell_sublime_load":
+	{
+		"height": 94.0
+	},
+	"output.markdown":
+	{
+		"height": 147.0
+	},
+	"project": "",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"sublime",
+				"notes/Language/Markdown/SublimeTextCheatsheet.md"
+			],
+			[
+				"scala",
+				"notes/Language/Scala/ScalaAdvanced.md"
+			],
+			[
+				"data",
+				"heroku-site/data/data.json"
+			],
+			[
+				"hql",
+				"notes/Language/Java/Hibernate/HQL.md"
+			],
+			[
+				"rest",
+				"notes/Topics/REST.md"
+			],
+			[
+				"",
+				"notes/DataScience/Hadoop/HadoopArchitecture.md"
+			],
+			[
+				"architec",
+				"notes/DataScience/Hadoop/HadoopArchitecture.md"
+			],
+			[
+				"hadooparc",
+				"notes/DataScience/Hadoop/HadoopArchitecture.md"
+			],
+			[
+				"book",
+				"notes/Link/Books.md"
+			],
+			[
+				"archi",
+				"notes/DataScience/Hadoop/HadoopArchitecture.md"
+			],
+			[
+				"sub",
+				"notes/Language/Markdown/SublimeTextCheatsheet.md"
+			],
+			[
+				"app.css",
+				"heroku-site/public/stylesheets/app.css"
+			],
+			[
+				"sql",
+				"AlgorithmArchive/SQL/sql.md"
+			],
+			[
+				"index",
+				"sitec/index.html"
+			],
+			[
+				"python",
+				"notes/Language/Python/PythonBasic.md"
+			],
+			[
+				"heroku",
+				"AlgorithmArchive/git/heroku.md"
+			],
+			[
+				"robots",
+				"sitec/public/robots.txt"
+			],
+			[
+				"heroku-siteapp.css",
+				"heroku-site/public/stylesheets/app.css"
+			],
+			[
+				"app.js",
+				"sitec/public/js/app.js"
+			],
+			[
+				"haskell",
+				"notes/Language/Haskell/Haskell.md"
+			],
+			[
+				"setup",
+				"notes/DataScience/Hadoop/HadoopSetup.md"
+			],
+			[
+				"cheat",
+				"notes/Language/Markdown/SublimeTextCheatsheet.md"
+			],
+			[
+				"scalabas",
+				"notes/Language/Scala/ScalaBasics.md"
+			],
+			[
+				"haskel",
+				"notes/Language/Haskell/Haskell.md"
+			],
+			[
+				"collection",
+				"notes/Language/Java/CoreJava/Collections.md"
+			],
+			[
+				"lecture",
+				"notes/DataScience/Hadoop/CTOLecture.md"
+			],
+			[
+				"lect",
+				"notes/DataScience/Hadoop/CTOLecture.md"
+			],
+			[
+				"angularjs",
+				"AlgorithmArchive/javascript/AngularJS.md"
+			],
+			[
+				"cto",
+				"notes/DataScience/Hadoop/CTOLecture.md"
+			],
+			[
+				"java",
+				"AlgorithmArchive/javascript/jsexample/javascript.js"
+			],
+			[
+				"link.md",
+				"notes/DataScience/Reference/Link.md"
+			],
+			[
+				"observer",
+				"notes/Language/Java/CoreJava/Observer.md"
+			],
+			[
+				"lectu",
+				"notes/Lecture.md"
+			],
+			[
+				"git",
+				"AlgorithmArchive/git/git.md"
+			],
+			[
+				"marked.js",
+				"GitHub/Literature/portfolio-qt/node_modules/marked/lib/marked.js"
+			],
+			[
+				"angu",
+				"GitHub/AlgorithmArchive/javascript/AngularJS.md"
+			],
+			[
+				"angular",
+				"GitHub/AlgorithmArchive/javascript/AngularJS.md"
+			],
+			[
+				"angul",
+				"GitHub/AlgorithmArchive/javascript/AngularJS.md"
+			],
+			[
+				"portfolio-qt",
+				"GitHub/Literature/portfolio-qt/.gitignore"
+			],
+			[
+				"sqrt",
+				"GitHub/AlgorithmArchive/python/questiones/068_sqrtx.py"
+			],
+			[
+				"subarray",
+				"GitHub/AlgorithmArchive/python/questiones/052_maximumsubarray.py"
+			],
+			[
+				"combination",
+				"GitHub/AlgorithmArchive/python/questiones/077_combinations.py"
+			],
+			[
+				"forms.py",
+				"GitHub/AlgorithmArchive/python/django/boardgames/tictactoe/forms.py"
+			],
+			[
+				"h5bp",
+				"GitHub/Documents/front-end by h5bp.md"
+			],
+			[
+				"fr",
+				"GitHub/Documents/front-end by h5bp.md"
+			],
+			[
+				"fronte",
+				"GitHub/Documents/front-end by h5bp.md"
+			],
+			[
+				"a92-1033",
+				"prototype/01_Data/aan/papers_text/A92-1033.txt"
+			],
+			[
+				"a94-1031",
+				"prototype/01_Data/aan/papers_text/A94-1031.txt"
+			],
+			[
+				"test.py",
+				"prototype/code+/test.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/GitHub/bigdata.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 181.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
