@@ -1,3 +1,5 @@
+
+
 (* Dan Grossman, Coursera PL, HW2 Provided Code *)
 
 (* if you use this function to compare two strings (returns true if the same
@@ -47,14 +49,16 @@ fun get_substitutions2(sub: string list list, s:string): string list =
 type name = {first:string, middle:string, last:string}
 		
 fun similar_names(sub: string list list, full:name):name list =
+  
   case full of {first=a, middle=b, last=c} =>
-	       helper(
-		   a::get_substitutions2(sub,a),
-		   b::get_substitutions2(sub,b),
-		   c::get_substitutions2(sub,c)
-	       )
-	       
-     
+	       let fun similar_first (nil) = nil
+		     | similar_first (H::T) =
+		       {first=H, middle=b, last=c}::similar_first(T)
+	       in
+		   similar_first(a::get_substitutions2(sub,a))
+	       end
+		   
+    
 					 
 		 
 					  
