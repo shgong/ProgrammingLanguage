@@ -1,0 +1,33 @@
+Standard ML of New Jersey v110.80 [built: Fri Aug 19 07:49:58 2016]
+- [opening /Users/shgong/github/uwpl/sml/hw2/code.sml]
+/Users/shgong/github/uwpl/sml/hw2/code.sml:56.11-56.56 Error: operator and operand don't agree [circularity]
+  operator domain: 'Z list
+  operand:         'Z list list
+  in expression:
+    similar_first (T :: nil)
+val it = () : unit
+- 
+[opening /Users/shgong/github/uwpl/sml/hw2/code.sml]
+/Users/shgong/github/uwpl/sml/hw2/code.sml:56.11-56.56 Error: operator and operand don't agree [circularity]
+  operator domain: 'Z list
+  operand:         'Z list list
+  in expression:
+    similar_first (T :: nil)
+val it = () : unit
+- 
+[opening /Users/shgong/github/uwpl/sml/hw2/code.sml]
+val same_string = fn : string * string -> bool
+val filter = fn : string * string list -> bool * string list
+val all_except_option = fn : string * string list -> string list option
+val get_substitutions1 = fn : string list list * string -> string list
+val get_substitutions2 = fn : string list list * string -> string list
+type name = {first:string, last:string, middle:string}
+val similar_names = fn : string list list * name -> name list
+datatype suit = Clubs | Diamonds | Hearts | Spades
+datatype rank = Ace | Jack | King | Num of int | Queen
+type card = suit * rank
+datatype color = Black | Red
+datatype move = Discard of suit * rank | Draw
+exception IllegalMove
+val it = () : unit
+- s
