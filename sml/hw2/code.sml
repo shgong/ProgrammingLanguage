@@ -132,8 +132,10 @@ fun officiate(cs:card list, ms:move list, goal:int) =
 	| turn(held, Discard(c)::moves, cards) =
 	  turn(remove_card(held,c,IllegalMove), moves,cards)
 	| turn(held, Draw::moves, []) = held
-	| turn(held, Draw::moves, topdeck::cards) = 
-	  turn(topdeck::held, moves, cards)
+	| turn(held, Draw::moves, topdeck::cards) =
+	  if sum_cards(held)<goal then
+	      turn(topdeck::held, moves, cards)
+	  else held 
   in
       score(turn([],ms,cs), goal)
   end
