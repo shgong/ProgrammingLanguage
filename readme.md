@@ -1,19 +1,8 @@
-# Hello World
-wooohoooo
+# Functional Programming
 
+- Avoid mutation in most case
+- use function as values
+- style close to math definition
+- encourage recursive data structure
+- idiom using laziness
 
-Some text blocks
-sadlajsdklasjfa
-dfa
-sfjkslafdjlsdgjlsdjfsl
-df3fj
-sgjklsdjlsdjgkldsjflkasdjgv
-sfkslafdjlsdgjlsdjfsl
-dfkslafdjlsdgjlsdjfsl
-df
-saf
-sa
-safkslafdjlsdgjlsdjfsl
-df
-saf
-safjlsdkafjlsdfjsafjslkdjflksdjfklsjf
