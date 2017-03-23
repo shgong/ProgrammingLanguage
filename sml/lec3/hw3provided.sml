@@ -60,3 +60,26 @@ val longest_capitalized = longest_string3 o only_capitals
 
 val rev_string = implode o List.rev o explode
 
+fun first_answer t l =
+  case l of
+      [] => raise NoAnswer
+    | x::xs => case t(x) of	  
+	          SOME b => b
+		| NONE =>  first_answer t xs 
+      
+  
+fun all_answers t l =
+  let fun helper(l,acc) =
+    case l of
+      [] => SOME acc
+    | x::xs => case t(x) of	  
+	          SOME b => helper(xs, b @ acc)
+		| NONE =>  NONE
+  in
+      helper(l,[])
+  end
+      
+
+
+val count_wildcards =1
+			 

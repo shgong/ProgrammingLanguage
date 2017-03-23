@@ -81,3 +81,5 @@ closure can implement adt
         * Haskell: laziness, purity, type classes, monads
         * Prolog: unification and backtracking
 
+
+## Language Class
