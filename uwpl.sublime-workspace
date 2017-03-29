@@ -244,20 +244,64 @@
 	"buffers":
 	[
 		{
-			"file": "sml/hw1/sample/10_repl.txt",
+			"file": "readme.md",
 			"settings":
 			{
-				"buffer_size": 2333,
-				"line_ending": "Windows"
+				"buffer_size": 1958,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/shgong/Google Drive/document/Language/Scala/scala_interview.md",
+			"settings":
+			{
+				"buffer_size": 1869,
+				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "Packages/SML (Standard ML)/SML.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 87.0,
 		"selected_items":
 		[
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git add ",
+				"Git: Add All"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"repl sml",
 				"SublimeREPL: SML"
@@ -277,10 +321,6 @@
 			[
 				"browse",
 				"Preferences: Browse Packages"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"remove ",
@@ -459,7 +499,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 449.0
+		"width": 504.0
 	},
 	"console":
 	{
@@ -477,17 +517,10 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/Users/shgong/GitHub/uwpl",
-		"/Users/shgong/GitHub/uwpl/sml",
-		"/Users/shgong/GitHub/uwpl/sml/hw1",
-		"/Users/shgong/GitHub/uwpl/sml/hw1/sample",
-		"/Users/shgong/GitHub/uwpl/sml/hw2",
-		"/Users/shgong/GitHub/uwpl/sml/hw2/sample"
-	],
 	"file_history":
 	[
+		"/Users/shgong/GitHub/uwpl/sml/lec3/hw3test.sml",
+		"/Users/shgong/GitHub/uwpl/sml/lec3/hw3provided.sml",
 		"/Users/shgong/GitHub/uwpl/hw2/sample/24_case_expressions.sml",
 		"/Users/shgong/GitHub/uwpl/1.sml",
 		"/Users/shgong/GitHub/uwpl/hw0provided.sml",
@@ -613,13 +646,11 @@
 		"/Users/shgong/GitHub/heroku-site/public/script/app.js",
 		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Python/PythonBasic.md",
 		"/Users/shgong/GitHub/heroku-site/public/notes/Management/ProjectManagement.md",
-		"/Users/shgong/GitHub/heroku-site/public/notes/Link/Fun.md",
-		"/Users/shgong/GitHub/heroku-site/public/notes/Link/Trivial.md",
-		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Java/Hibernate/Hibernate.md"
+		"/Users/shgong/GitHub/heroku-site/public/notes/Link/Fun.md"
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -809,34 +840,27 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"folders":
-	[
-		{
-			"follow_symlinks": true,
-			"path": "/Users/shgong/GitHub/uwpl"
-		}
-	],
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "sml/hw1/sample/10_repl.txt",
-					"semi_transient": true,
+					"file": "readme.md",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2333,
+						"buffer_size": 1958,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1957,
+								1957
 							]
 						],
 						"settings":
@@ -844,18 +868,53 @@
 							"WordCount":
 							{
 								"changes": 0,
+								"count": 254,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 753.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/shgong/Google Drive/document/Language/Scala/scala_interview.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								556,
+								556
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 268,
 								"count": 293,
 								"modified": false,
 								"selection": false,
 								"status": -1,
 								"syntax": "plain text"
 							},
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 71.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -902,6 +961,10 @@
 	"output.find_results":
 	{
 		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 88.0
 	},
 	"output.haskell_sublime_load":
 	{
@@ -1149,7 +1212,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 251.0,
+	"side_bar_width": 255.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
