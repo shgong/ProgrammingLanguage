@@ -27,7 +27,7 @@ What value does y have
 
 ## infix
 ```
-infix !> 
+infix !>
 fun x !> f = f x
 fun sqrt_of_abs i = i !> abs !> Real.fromInt !> Math.sqrt
 val sqrt_of_abs = Math.sqrt o Real.fromInt o abs
@@ -80,6 +80,3 @@ closure can implement adt
     + More
         * Haskell: laziness, purity, type classes, monads
         * Prolog: unification and backtracking
-
-
-## Language Class
