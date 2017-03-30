@@ -144,6 +144,7 @@ Prefered style over let-expression
 #### Improper List / Pair
 
 - Nested cons cells
-- `(cons (+7 7) #t)` => pair `'(14 . #t)`
-- `(cons 1 (cons 2 (cons 3 4)))` => nested pair `'(1 2 3 . 4)`
+  - `(cons (+7 7) #t)` => pair `'(14 . #t)`
+  - `(cons 1 (cons 2 (cons 3 4)))` => nested pair `'(1 2 3 . 4)`
 - car cdr now just get first part / second part
+- pairs are useful way to build an each-of type
