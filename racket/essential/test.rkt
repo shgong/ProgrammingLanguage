@@ -4,4 +4,4 @@
 (define (bad-letrec x)
   (letrec (
     [z 13])
-    (if x y z)))
+    (if x 1 z)))
