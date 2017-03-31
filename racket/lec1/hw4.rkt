@@ -32,4 +32,16 @@
             (stream-for-n-steps (cdr s)
                                 (- n 1)))
       null))
-  
+
+(define funny-number-stream
+  (letrec ([f (lambda(n) 
+                  (cons (if ( = (remainder n 5)0) (- 0 n) n)
+                        (lambda () (f (+ n 1)))))])
+  (lambda () (f 1))))
+      
+(define (dan-then-dog)
+  (define dan (lambda() (cons "dan.jpg" dog)))
+  (define dog (lambda() (cons "dog.jpg" dan)))
+  (dan))
+
+
