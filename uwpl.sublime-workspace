@@ -247,7 +247,7 @@
 			"file": "readme.md",
 			"settings":
 			{
-				"buffer_size": 1958,
+				"buffer_size": 1937,
 				"line_ending": "Unix"
 			}
 		},
@@ -255,7 +255,15 @@
 			"file": "/Users/shgong/Google Drive/document/Language/Scala/scala_interview.md",
 			"settings":
 			{
-				"buffer_size": 1869,
+				"buffer_size": 2174,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "racket/delay-evaluation.md",
+			"settings":
+			{
+				"buffer_size": 5905,
 				"line_ending": "Unix"
 			}
 		}
@@ -517,6 +525,11 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/shgong/GitHub/uwpl",
+		"/Users/shgong/GitHub/uwpl/racket"
+	],
 	"file_history":
 	[
 		"/Users/shgong/GitHub/uwpl/sml/lec3/hw3test.sml",
@@ -840,10 +853,17 @@
 		"whole_word": false,
 		"wrap": true
 	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Users/shgong/GitHub/uwpl"
+		}
+	],
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -852,15 +872,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1958,
+						"buffer_size": 1937,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1957,
-								1957
+								0,
+								0
 							]
 						],
 						"settings":
@@ -874,13 +894,15 @@
 								"status": -1,
 								"syntax": "plain text"
 							},
-							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 753.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -889,32 +911,73 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1869,
+						"buffer_size": 2174,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								556,
-								556
+								1115,
+								1115
 							]
 						],
 						"settings":
 						{
 							"WordCount":
 							{
-								"changes": 268,
-								"count": 293,
+								"changes": 0,
+								"count": 332,
 								"modified": false,
 								"selection": false,
 								"status": -1,
 								"syntax": "plain text"
 							},
-							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 71.0,
+						"translation.y": 173.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "racket/delay-evaluation.md",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 5905,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 0,
+								"count": 826,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1918.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1212,7 +1275,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 255.0,
+	"side_bar_width": 127.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
