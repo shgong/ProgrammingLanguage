@@ -1,4 +1,5 @@
 
+# Racket Lists
 
 ```racket
 ; helper functions for constructing
@@ -25,6 +26,9 @@
   - compare between sybols are faster than strings
   - can use eq?, but not for strings (copys)
 
+- construct a list with symbol and content
+- check list elements
+
 ```
 (define (eval-exp e)
   (cond [(Const? e) e] ; note returning an exp, not a number
@@ -38,3 +42,47 @@
         [#t (error "eval-exp expected an exp")]))
 
 ```
+
+# Racket Struct
+
+```
+(struct foo (bar baz quux) #:transparent)
+```
+
+- look like ML constructor
+- it adds to environment functions for constructing foo
+  + foo
+  + foo?
+  + foo-bar
+  + foo-baz
+  + foo-quux
+- attributes
+  + `#:transparent` makes the fields and accessor functions visible outside the module
+    * e.g. `(foo "hi" (+ 3 7) #f)` will print as
+      + `#<foo>` if not transprent
+      + `(foo "hi" 10 #f)` if transprent
+  + `#: mutable` attr make all fields mutable by providing
+    * `set-foo-bar!`, `set-foo-baz!`, `set-foo-quux!`
+
+
+
+```racket
+(struct const (int) #:transparent)
+(struct negate (e) #:transparent)
+(struct add (e1 e2) #:transparent)
+(struct multiply (e1 e2) #:transparent)
+
+(define (eval-exp e)
+  (cond [(const? e) e] ; note returning an exp, not a number
+        [(negate? e) (const (- (const-int (eval-exp (negate-e e)))))]
+        [(add? e) (let ([v1 (const-int (eval-exp (add-e1 e)))]
+                        [v2 (const-int (eval-exp (add-e2 e)))])
+                      (const (+ v1 v2)))]
+        [(multiply? e) (let ([v1 (const-int (eval-exp (multiply-e1 e)))]
+                             [v2 (const-int (eval-exp (multiply-e2 e)))])
+                          (const (* v1 v2)))]
+        [#t (error "eval-exp expected an exp")]))
+
+```
+
+# Why struct is better
