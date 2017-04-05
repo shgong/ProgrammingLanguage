@@ -21,3 +21,27 @@
   + JVM interpret and compile code into hardware
   + hardware have translator convert binary instructions into units
   + hardware itself is a interpreter written in transistor
+
+# Implementing a language inside another Language
+
+- Example: `(negate (add (const 2) (const 2)))`
+- In Racket, we directly write abstract-syntax trees
+  - so we skipped parser and checker
+
+# Assumptions and Non-assumptions about legal AST
+
+Let's extends our language
+
+```racket
+(struct const (int) #:transparent) ; int should hold a number
+(struct negate (e1) #:transparent) ; e1 should hold an expression
+(struct add (e1 e2) #:transparent) ; e1, e2 should hold expressions
+(struct multiply (e1 e2) #:transparent) ; e1, e2 should hold expressions
+(struct bool (b) #:transparent) ; b should hold #t or #f
+(struct if-then-else (e1 e2 e3) #:transparent) ; e1, e2, e3 should hold expressions
+(struct eq-num (e1 e2) #:transparent) ; e1, e2 should hold expression
+```
+
+- new features
+  - boolean
+  - integer
