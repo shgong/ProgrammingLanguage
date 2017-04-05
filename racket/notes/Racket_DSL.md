@@ -86,3 +86,9 @@
 ```
 
 # Why struct is better
+
+- more concise
+- catch error sooner
+  - only way to access fields is `add-e1`
+  - using `car`, `cdr`, will cause run-time error
+- struct is a powerful primitive that cannot be described or defined in terms of other things
