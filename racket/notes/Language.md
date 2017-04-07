@@ -44,4 +44,6 @@ Let's extends our language
 
 - new features
   - boolean
-  - integer
+  - conditionals
+  - a construct for comparing numbers and return boolean
+- three possible result of evaluating 
