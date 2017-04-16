@@ -243,30 +243,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "readme.md",
-			"settings":
-			{
-				"buffer_size": 1937,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/shgong/Google Drive/document/Language/Scala/scala_interview.md",
-			"settings":
-			{
-				"buffer_size": 2174,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "racket/delay-evaluation.md",
-			"settings":
-			{
-				"buffer_size": 5905,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/SML (Standard ML)/SML.sublime-build",
 	"command_palette":
@@ -528,17 +504,20 @@
 	"expanded_folders":
 	[
 		"/Users/shgong/GitHub/uwpl",
-		"/Users/shgong/GitHub/uwpl/racket"
+		"/Users/shgong/GitHub/uwpl/racket",
+		"/Users/shgong/GitHub/uwpl/racket/lec1",
+		"/Users/shgong/GitHub/uwpl/racket/lec1/code"
 	],
 	"file_history":
 	[
+		"/Users/shgong/GitHub/uwpl/readme.md",
+		"/Users/shgong/Google Drive/document/Language/Scala/scala_interview.md",
 		"/Users/shgong/GitHub/uwpl/sml/lec3/hw3test.sml",
 		"/Users/shgong/GitHub/uwpl/sml/lec3/hw3provided.sml",
 		"/Users/shgong/GitHub/uwpl/hw2/sample/24_case_expressions.sml",
 		"/Users/shgong/GitHub/uwpl/1.sml",
 		"/Users/shgong/GitHub/uwpl/hw0provided.sml",
 		"/Users/shgong/GitHub/uwpl/hw0test.sml",
-		"/Users/shgong/GitHub/uwpl/readme.md",
 		"/Volumes/My Passport/Class/2006-2013/名片夹/龚华.vcf",
 		"/Users/shgong/Documents/GameDesign/flux-todomvc/index.html",
 		"/Users/shgong/Documents/GameDesign/react-15.3.0/index.html",
@@ -658,8 +637,7 @@
 		"/Users/shgong/GitHub/heroku-site/public/blogpost/1.md",
 		"/Users/shgong/GitHub/heroku-site/public/script/app.js",
 		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Python/PythonBasic.md",
-		"/Users/shgong/GitHub/heroku-site/public/notes/Management/ProjectManagement.md",
-		"/Users/shgong/GitHub/heroku-site/public/notes/Link/Fun.md"
+		"/Users/shgong/GitHub/heroku-site/public/notes/Management/ProjectManagement.md"
 	],
 	"find":
 	{
@@ -863,126 +841,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "readme.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1937,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 0,
-								"count": 254,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 753.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/Users/shgong/Google Drive/document/Language/Scala/scala_interview.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2174,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1115,
-								1115
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 0,
-								"count": 332,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 173.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "racket/delay-evaluation.md",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 5905,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"WordCount":
-							{
-								"changes": 0,
-								"count": 826,
-								"modified": false,
-								"selection": false,
-								"status": -1,
-								"syntax": "plain text"
-							},
-							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1918.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1275,7 +1135,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 127.0,
+	"side_bar_width": 98.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

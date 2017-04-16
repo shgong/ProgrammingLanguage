@@ -47,3 +47,11 @@ Let's extends our language
   - conditionals
   - a construct for comparing numbers and return boolean
 - three possible result of evaluating 
+
+
+
+
+
+# Possible results
+
+
