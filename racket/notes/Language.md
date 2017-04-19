@@ -46,4 +46,10 @@ Let's extends our language
   - boolean
   - conditionals
   - a construct for comparing numbers and return boolean
-- three possible result of evaluating 
+- three possible result of evaluating
+
+## 1
+
+## 2
+
+## 3
