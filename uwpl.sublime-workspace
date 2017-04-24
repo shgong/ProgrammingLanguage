@@ -501,15 +501,10 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/Users/shgong/GitHub/uwpl",
-		"/Users/shgong/GitHub/uwpl/racket",
-		"/Users/shgong/GitHub/uwpl/racket/lec1",
-		"/Users/shgong/GitHub/uwpl/racket/lec1/code"
-	],
 	"file_history":
 	[
+		"/Users/shgong/GitHub/uwpl/racket/notes/Racket_DSL.md",
+		"/Users/shgong/GitHub/uwpl/racket/notes/Language.md",
 		"/Users/shgong/GitHub/uwpl/readme.md",
 		"/Users/shgong/Google Drive/document/Language/Scala/scala_interview.md",
 		"/Users/shgong/GitHub/uwpl/sml/lec3/hw3test.sml",
@@ -635,9 +630,7 @@
 		"/Users/shgong/GitHub/heroku-site/views/pages/index.ejs",
 		"/Users/shgong/GitHub/heroku-site/public/stylesheets/app.css",
 		"/Users/shgong/GitHub/heroku-site/public/blogpost/1.md",
-		"/Users/shgong/GitHub/heroku-site/public/script/app.js",
-		"/Users/shgong/GitHub/heroku-site/public/notes/Language/Python/PythonBasic.md",
-		"/Users/shgong/GitHub/heroku-site/public/notes/Management/ProjectManagement.md"
+		"/Users/shgong/GitHub/heroku-site/public/script/app.js"
 	],
 	"find":
 	{
@@ -831,13 +824,6 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"folders":
-	[
-		{
-			"follow_symlinks": true,
-			"path": "/Users/shgong/GitHub/uwpl"
-		}
-	],
 	"groups":
 	[
 		{
@@ -1135,7 +1121,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 98.0,
+	"side_bar_width": 291.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

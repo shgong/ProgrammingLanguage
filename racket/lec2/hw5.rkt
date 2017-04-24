@@ -35,7 +35,6 @@
 
 (racketlist->mupllist (list (int 1) (int 2)))
 
-;; Problem 2
 (define (mupllist->racketlist x)
   (if (aunit? x)
       null
@@ -43,6 +42,9 @@
             (mupllist->racketlist (apair-e2 x)))))
 
 (mupllist->racketlist (apair (int 1) (apair (int 2) (aunit))))
+
+
+;; Problem 2
 
 ;; lookup a variable in an environment
 ;; Do NOT change this function
