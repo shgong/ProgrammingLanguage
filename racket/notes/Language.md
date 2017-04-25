@@ -46,6 +46,7 @@ Let's extends our language
   - boolean
   - conditionals
   - a construct for comparing numbers and return boolean
+<<<<<<< HEAD
 
 - three possible result of evaluating
   - Integer
@@ -114,3 +115,14 @@ Let's extends our language
     - change all functions to take an extra `environment` argument, and all function call explicitly pass this argument
     - compiler translate all uses of free variable with find right value from env
     - using arrays can helper lookup faster
+=======
+- three possible result of evaluating 
+
+
+
+
+
+# Possible results
+
+
+>>>>>>> 64088adb678ae64ddeb26d2b2f8ed47863356699
