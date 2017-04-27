@@ -72,7 +72,25 @@
         [(int? e) e]
         [(closure? e) e]
         [(aunit? e) e]
-        [(apair? e) e]
+        
+        [(apair? e)
+         (let ([v1 (eval-under-env (apair-e1 e) env)]
+               [v2 (eval-under-env (apair-e2 e) env)])
+           (apair v1 v2))]
+
+        [(fst? e)
+         (let ([v (eval-under-env (fst-e e) env)])
+           (if (apair? v)
+               (apair-e1 v)
+               (error "MUPL first require a pair")))]
+        
+        [(snd? e)
+         (let ([v (eval-under-env (snd-e e) env)])
+           (if (apair? v)
+               (apair-e2 v)
+               (error "MUPL second require a pair")))]
+
+        [(fun? e) (closure env fun)]
         
         [(ifgreater? e)
          (let ([v1 (eval-under-env (ifgreater-e1 e) env)]
@@ -87,15 +105,37 @@
                    v4)
                (error "MUPL comparison applied to non-number")))]
         
-        [(mlet? e) e]
+        [(mlet? e)
+         (let ([v (eval-under-env (mlet-e e) env)])
+           (eval-under-env (mlet-body e)
+                           (cons (cons (mlet-var e) v) env)))]
+        [(call? e)
+         (let ([funexp (call-funexp e)]
+               [actual (eval-under-env (call-actual e) env)])
+           (if (closure? funexp)
+               (let ([cenv (closure-env funexp)]
+                     [cfun (closure-fun funexp)])
+                 (eval-under-env (fun-body cfun)
+                                 (let ([fenv (cons (cons (fun-formal cfun) actual) cenv)])
+                                   (if (fun-nameopt cfun)
+                                       (cons (cons (fun-nameopt cfun) funexp) fenv)
+                                       fenv))))
+               (error "MUPL call funexp should be a closure")
+           ))]
 
-        
+        [(isaunit? e)
+         (let ([v (eval-under-env (isaunit-e e) env)])
+           (if (aunit? v)
+               (int 1)
+               (int 0)))]
+          
         [#t (error (format "bad MUPL expression: ~v" e))]))
 
 ;; Do NOT change
 (define (eval-exp e)
   (eval-under-env e null))
-        
+
+
 ;; Problem 3
 
 (define (ifaunit e1 e2 e3) "CHANGE")
