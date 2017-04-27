@@ -33,7 +33,7 @@
       (apair (car xs)
              (racketlist->mupllist (cdr xs)))))
 
-(racketlist->mupllist (list (int 1) (int 2)))
+;(racketlist->mupllist (list (int 1) (int 2)))
 
 (define (mupllist->racketlist x)
   (if (aunit? x)
@@ -41,7 +41,7 @@
       (cons (apair-e1 x)
             (mupllist->racketlist (apair-e2 x)))))
 
-(mupllist->racketlist (apair (int 1) (apair (int 2) (aunit))))
+;(mupllist->racketlist (apair (int 1) (apair (int 2) (aunit))))
 
 
 ;; Problem 2
@@ -94,15 +94,13 @@
         
         [(ifgreater? e)
          (let ([v1 (eval-under-env (ifgreater-e1 e) env)]
-               [v2 (eval-under-env (ifgreater-e2 e) env)]
-               [v3 (eval-under-env (ifgreater-e3 e) env)]
-               [v4 (eval-under-env (ifgreater-e4 e) env)])
+               [v2 (eval-under-env (ifgreater-e2 e) env)])
            (if (and (int? v1)
                     (int? v2))
                (if (> (int-num v1) 
                        (int-num v2))
-                   v3
-                   v4)
+                   (eval-under-env (ifgreater-e3 e) env)
+                   (eval-under-env (ifgreater-e4 e) env))
                (error "MUPL comparison applied to non-number")))]
         
         [(mlet? e)
@@ -138,11 +136,28 @@
 
 ;; Problem 3
 
-(define (ifaunit e1 e2 e3) "CHANGE")
+(define (ifaunit e1 e2 e3) (ifgreater (isaunit e1) (int 0) e2 e3))
 
-(define (mlet* lstlst e2) "CHANGE")
+(define (mlet* lstlst e2)
+  (if (empty? lstlst)
+      e2
+      (let ([tup (car lstlst)])
+        (mlet (car tup)
+              (cdr tup)
+              (mlet* (cdr lstlst) e2)))))
 
-(define (ifeq e1 e2 e3 e4) "CHANGE")
+(define (ifeq e1 e2 e3 e4)
+  (mlet "_x"
+        e1
+        (mlet "_y"
+              e2
+              (ifgreater (var "_x")
+                         (var "_y")
+                         e4
+                         (ifgreater (var "_y")
+                                    (var "_x")
+                                    e4
+                                    e3))))) 
 
 ;; Problem 4
 
