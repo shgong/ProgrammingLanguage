@@ -90,7 +90,7 @@
                (apair-e2 v)
                (error "MUPL second require a pair")))]
 
-        [(fun? e) (closure env fun)]
+        [(fun? e) (closure env e)]
         
         [(ifgreater? e)
          (let ([v1 (eval-under-env (ifgreater-e1 e) env)]
@@ -108,7 +108,7 @@
            (eval-under-env (mlet-body e)
                            (cons (cons (mlet-var e) v) env)))]
         [(call? e)
-         (let ([funexp (call-funexp e)]
+         (let ([funexp (eval-under-env (call-funexp e) env)]
                [actual (eval-under-env (call-actual e) env)])
            (if (closure? funexp)
                (let ([cenv (closure-env funexp)]
@@ -161,11 +161,26 @@
 
 ;; Problem 4
 
-(define mupl-map "CHANGE")
+(define mupl-map
+      (fun #f
+           "_function"
+                    (fun "_muplm"
+                         "_x"
+                         (ifaunit (var "_x")
+                                  (aunit)
+                                  (apair (call (var "_function")
+                                               (fst (var "_x")))
+                                         (call (var "_muplm")
+                                               (snd (var "_x"))))))))
 
 (define mupl-mapAddN 
   (mlet "map" mupl-map
-        "CHANGE (notice map is now in MUPL scope)"))
+        (fun #f "i"
+             (call (var "map")
+                   (fun #f
+                        "x"
+                        (add (var "x")
+                             (var "i")))))))
 
 ;; Challenge Problem
 
