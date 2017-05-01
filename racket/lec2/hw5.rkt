@@ -10,7 +10,7 @@
 (struct ifgreater (e1 e2 e3 e4)    #:transparent) ;; if e1 > e2 then e3 else e4
 (struct fun  (nameopt formal body) #:transparent) ;; a recursive(?) 1-argument function
 (struct call (funexp actual)       #:transparent) ;; function call
-(struct mlet (var e body) #:transparent) ;; a local binding (let var = e in body) 
+(struct mlet (var e body) #:transparent) ;; a local binding (let var = e in body)
 (struct apair (e1 e2)     #:transparent) ;; make a new pair
 (struct fst  (e)    #:transparent) ;; get first part of a pair
 (struct snd  (e)    #:transparent) ;; get second part of a pair
@@ -18,7 +18,7 @@
 (struct isaunit (e) #:transparent) ;; evaluate to 1 if e is unit else 0
 
 ;; a closure is not in "source" programs but /is/ a MUPL value; it is what functions evaluate to
-(struct closure (env fun) #:transparent) 
+(struct closure (env fun) #:transparent)
 
 ;; Problem 1
 (define (mupl-value? x)
@@ -53,26 +53,26 @@
         [(equal? (car (car env)) str) (cdr (car env))]
         [#t (envlookup (cdr env) str)]))
 
-;; Do NOT change the two cases given to you.  
+;; Do NOT change the two cases given to you.
 ;; DO add more cases for other kinds of MUPL expressions.
 ;; We will test eval-under-env by calling it directly even though
 ;; "in real life" it would be a helper function of eval-exp.
 (define (eval-under-env e env)
-  (cond [(var? e) 
+  (cond [(var? e)
          (envlookup env (var-string e))]
-        [(add? e) 
+        [(add? e)
          (let ([v1 (eval-under-env (add-e1 e) env)]
                [v2 (eval-under-env (add-e2 e) env)])
            (if (and (int? v1)
                     (int? v2))
-               (int (+ (int-num v1) 
+               (int (+ (int-num v1)
                        (int-num v2)))
                (error "MUPL addition applied to non-number")))]
         ;; CHANGE add more cases here
         [(int? e) e]
         [(closure? e) e]
         [(aunit? e) e]
-        
+
         [(apair? e)
          (let ([v1 (eval-under-env (apair-e1 e) env)]
                [v2 (eval-under-env (apair-e2 e) env)])
@@ -83,7 +83,7 @@
            (if (apair? v)
                (apair-e1 v)
                (error "MUPL first require a pair")))]
-        
+
         [(snd? e)
          (let ([v (eval-under-env (snd-e e) env)])
            (if (apair? v)
@@ -91,18 +91,18 @@
                (error "MUPL second require a pair")))]
 
         [(fun? e) (closure env e)]
-        
+
         [(ifgreater? e)
          (let ([v1 (eval-under-env (ifgreater-e1 e) env)]
                [v2 (eval-under-env (ifgreater-e2 e) env)])
            (if (and (int? v1)
                     (int? v2))
-               (if (> (int-num v1) 
+               (if (> (int-num v1)
                        (int-num v2))
                    (eval-under-env (ifgreater-e3 e) env)
                    (eval-under-env (ifgreater-e4 e) env))
                (error "MUPL comparison applied to non-number")))]
-        
+
         [(mlet? e)
          (let ([v (eval-under-env (mlet-e e) env)])
            (eval-under-env (mlet-body e)
@@ -126,7 +126,7 @@
            (if (aunit? v)
                (int 1)
                (int 0)))]
-          
+
         [#t (error (format "bad MUPL expression: ~v" e))]))
 
 ;; Do NOT change
@@ -157,7 +157,7 @@
                          (ifgreater (var "_y")
                                     (var "_x")
                                     e4
-                                    e3))))) 
+                                    e3)))))
 
 ;; Problem 4
 
@@ -173,7 +173,7 @@
                                          (call (var "_muplm")
                                                (snd (var "_x"))))))))
 
-(define mupl-mapAddN 
+(define mupl-mapAddN
   (mlet "map" mupl-map
         (fun #f "i"
              (call (var "map")
