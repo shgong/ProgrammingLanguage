@@ -34,14 +34,115 @@
 
 ```ruby
 class Foo  # className must be capitalized
+
+  @foo = "newValue" # instance variable
+  @@bar = "sharedValue" # class variable
+
   def m1 # can take any arguments
     ... # a method implicitly returns its last expression
   end
 
-  def m2 (x,y)
+  def m2 (x,y,z=0,w="hi") # default
   end
-
+k
   def mn z
   end
+
+  def self.method_name args # define class constants
+  end
 end
+
+# constructing an object
+Foo.new
+
+# class constant, or static methods
+Math::PI
+```
+
+## Visibility and Getter/Setter
+
+- Instance variables are private to object
+  - even other instance of same class can not access
+- methods have visibilities
+  - public (first method has an implicit public)
+  - private
+  - protected (same class or subclasses)
+
+```ruby
+def foo
+  @foo
+end
+
+def foo= x
+  @foo = x
+end
+
+# setter may be not actually a setter
+def celsius_temp= x
+  @kelvin_temp = x + 273.15
+end
+
+# syntax for defining g/s easily
+attr_reader :y, :z
+attr_accessor :x
+```
+
+> as a cute piece of syntactic sugar, when calling a method ends in =, you can have space before =
+
+## Some Syntax, Semantics and Scopings
+
+```ruby
+e1 if e2
+
+if e1
+  e2
+else
+  e3
+end
+
+if e1 then e2 else e3 end
+```
+
+- several forms of conditional expressions
+- new line are significant
+- condition on any object are true, except false and nil
+- `foo=` feels like assignment but is really method call
+- self for this in Java/C#/C++
+- variable get automatically created by assignment
+
+
+## Everything is an Object
+
+- `-42` is an instance of `Fixnum`, thus have method like `abs`
+- `-42.abs == 42`
+- `nil?` method, check nil, like ML's () and Racket's void object
+- method can return self, which help nested call `x.foo(14).bar("hi")`
+- don't need main method, top level is accessible
+
+## Duck Typing
+
+- Duck typing
+  - if it walks like a duck and quacks like a duck, then it's a duck
+  - class of an object is not important so long as object can respond to all message expected
+
+```ruby
+def mirror_update pt
+  pt.x = pt.x * -1
+end
+```
+- first look: take Point class and mirror y-axis
+- actually more general
+  - just need method: x & x=, may not be getter setter of varaible x
+  - even x don't need to be a number, as long as can accept * method with -1
+- Pro & cons
+  - more reusable, fake duck can still use code
+  - difficult to refactor, you don't dare to change x+x to x*2, as implementation might be different
+
+
+## Arrays
+
+- much more flexible and dynamic, compared to C/C++/Java
+
+```ruby
+a = [e1, e2, e3, e4]
 ```
