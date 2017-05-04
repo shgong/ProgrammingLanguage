@@ -341,6 +341,7 @@ end
 ```
 
 ## The Precise Definition of Method Lookup
+
 - given a call `e0.m(e1,e2..en)`
   - what are rules to look up what method definition `m` we call
   - non-trivial question in presence of overriding
@@ -348,3 +349,148 @@ end
   - local variables: not too different from ML & Racket
   - instance variable, class variable and methods => different
     - depend on the object bound to `self`
+
+- General Rule of evaluate a method call
+  - e0.m(e1..en)
+  - Evaluate e0..en to values, i.e. obj0..objn
+  - Get the class `A` of obj0, every object know its class at run-time
+  - If m is defined in A
+    - call that method
+    - or recur with superclass of A
+    - if not found, call method_missing method
+    - this method in Object will raise an error
+  - If method has formal arguments x1..xn
+    - map x1 to obj1, etc
+    - while evaluating method body, self is bound to obj0
+
+- When body of m calls a method on self
+  - we use the class of obj0 class to resolve some method
+  - not necessarily the class of method we are executing
+  - that's why `PolarPoint`'s `distFromOrigin2` will works
+
+
+## Dynamic Dispatch Versus Closures
+
+How dynamic dispatch differs from lexical scope we used for function calls:
+
+```ruby
+fun even x = if x=0 then true else odd (x-1)
+fun odd  x = if x=0 then false else even (x-1)
+```
+- thus two closure both have the other closure in their environment.
+- if we later shadow the even closure with `fun even x = false`
+- will not change how odd behave, it still looks up even in its evn
+  - it's good that does not break later
+  - but if we have better even like `fun even = (x mod 2) = 0`, won't benefit either
+
+In OOP, however, we can use (abuse?) subclassing, overriding and dynamic dispatch
+
+```ruby
+class A
+  def even x
+    if x==0 then true else odd(x-1) end
+  end
+  def odd x
+    if x==0 then false else even(x-1) end
+  end
+end
+
+class B < A
+  def even x
+    x % 2 == 0
+  end
+end
+```
+
+This is dynamic disptach, self bound to current env
+
+## Dynamic Dispatch in Racket
+
+
+- Why do this
+  - one language's semantics, however primitive like, can typically be coded up as an idiom in another language
+  - a lower-level way to understand how dynamic dispatch works by seeing a implemnetation
+- Actually different from Ruby implementation
+  - just contain list of fields & methods, not class-based
+  - real implemntations more efficient, use arrays/hashtables for fields, association lists for methods
+
+```racket
+# object just have fields and methods
+(strut obj (fields methods))
+```
+
+- fields hold an immutable list of mutable pairs
+- define helper functions like getter and setter
+
+```racket
+(define (assoc-m v xs)
+  (cond [(null? xs) #f]
+        [(equal? v (mcar (car xs))) (car xs)]
+        [#t (assoc-m v (cdr xs))]))
+
+(define (get obj fld)
+  (let ([pr (assoc-m fld (obj-fields obj))])
+    (if pr
+        (mcdr pr)
+        (error "field not found"))))
+
+(define (set obj fld v)
+  (let ([pr (assoc-m fld (obj-fields obj))])
+    (if pr
+        (set-mcdr! pr v)
+        (error "field not found"))))
+```
+
+- Methods fields will also be association list
+- the key to getting dynamic dispatch to work
+  - functions will all take an extra explicit argument that is implicit in ruby languages
+  - the argument will be "self"
+  - Racket helper function will simply pass in the correct object
+- Notice the function we use for methods gets passed the while object obj1
+- send can take any number of arguments >= 2
+
+```racket
+(define (send obj msg . args)
+  (let ([pr (assoc-m msg (obj-methods obj))])
+    (if pr
+        ((cdr pr) obj args)
+        (error "method not found" msg))))
+```
+
+- Now we can define make-point
+  - each of methods takes a first argument, that call self
+
+```racket
+  (define (make-point _x _y)
+    (obj
+      (list (mcons 'x _x)
+            (mcons 'y _y))
+      (list (cons 'get-x (lambda (self args) (get self 'x)))
+            (cons 'get-y (lambda (self args) (get self 'y)))
+            (cons 'set-x (lambda (self args) (set self 'x (car args))))
+            (cons 'set-y (lambda (self args) (set self 'y (car args))))
+            (cons 'distToOrigin
+                  (lambda (self args)
+                    (let ([a (send self 'get-x)]
+                          [b (send self 'get-y)])
+                      (sqrt (+ (* a a) (* b b)))))))))
+
+(define p1 (make-point 4 0))
+(send p1 'get-x) ; 4
+(send p1 'get-y) ; 0
+(send p1 'distToOrigin) ; 4
+(send p1 'set-y 3)
+(send p1 'distToOrigin) ; 5
+
+
+(define (make-color-point _x _y _c)
+  (let ([pt (make-point _x _y)])
+    (obj
+      (cons (mcons 'color _c)
+            (obj-fields pt))
+      (append (list
+                (cons 'get-color (lambda (self args) (get self 'color)))
+                (cons 'set-color (lambda (self args) (set self 'color (car args)))))
+              (obj-methods pt)))))
+
+```
