@@ -142,10 +142,209 @@ end
 ## Arrays
 
 - much more flexible and dynamic, compared to C/C++/Java
+  - can hold objects from different classes
+  - negative array indices from end of the array
+  - no array bounds error, return nil
+  - many methods in std lib
+- also act as structs
+  - tuple
+  - stacks (push, pop)
+  - queues (push, shift)
+
 
 ```ruby
-a = [e1, e2, e3, e4]
+a = [e1, e2, e3, e4]  #sindex 0 1 2 3
+a[0]    # get
+a[1]=2  # set
 
-
-
+Array.new(4)      #[nil,nil,nil,nil]
+Array.new(x){0}   #[0,0,0...0]
+Array.new(5){|i| -i}  #[0,-1,-2,-3,-4]
 ```
+
+
+## Passing Blocks
+
+Ruby has while loop and for loops, but not much people use them
+
+```ruby
+# print hi x times
+x.times {puts "hi"}
+
+y = 7
+[4,6,8].each { y+=1 }  # y = 10
+
+sum = 0
+[4,6,8].each { |x| sum += x} # sum = 18
+
+# inject is like fold
+sum = [4,6,8].inject(0){|acc,elt| acc+elt }
+```
+
+define your own method that take blocks
+```ruby
+def foo x
+  if x
+    yield
+  else
+    yield
+    yield
+  end
+end
+
+foo (true) { puts "hi" }
+foo (false) { puts "hi" }
+```
+
+put argument after yield to pass argument to block
+```ruby
+def count i
+  if yield i
+    1
+  else
+    1 + (count(i+1) {|x| yield x})
+  end
+end
+```
+
+## Proc
+
+- Blocks are not quite closure, because they are not objects
+- cannot store in field, pass as method argument, assign to varaible, put in array
+- the real closures in Ruby is Proc
+
+```ruby
+a = [3,5,7,9]
+b = a.map{|x| x+1}        # [4,6,8,10]
+i = b.count{|x| x>=6}     # 3
+
+# proc
+c = a.map {|x| lambda {|y| x>=y}}
+c[2].call 17                # false: 7 >= 17
+j = c.count {|x| x.call(5)} # 3    3>=5,5>=5,7>=5,9>=5
+```
+
+Ruby's design is an interesting contrast from ML and Racket, which just provide full closures as the natural
+choice. In Ruby, blocks are more convenient to use than Proc objects and suce in most uses, but program-
+mers still have Proc objects when needed. Is it better to distinguish blocks from closures and make the more
+common case easier with a less powerful construct, or is it better just to have one general fully powerful
+feature? (Or just fully powerful and add some syntactic sugars)
+
+## Hashes and Ranges
+
+- hash is like a object to object map
+
+```ruby
+# common (more efficient) to use ruby's symbol
+{"SML"=>7, "Racket"=>12, "Ruby"=>42}
+{:sml=>7, :racket=>12, :ruby=>42}
+h["a"] = "foundA"
+h[false] = "foundFalse"
+h[false]
+h[42]
+
+h.keys
+h.values
+h.delete(key)
+```
+
+- range is contiguous sequence of numbers
+  - Array.new(100) {|i| i}
+  - 1..100
+- duck typing let us use array methods
+
+```ruby
+def foo a
+  a.count {|x| x*x<50}
+end
+
+foo (2..10)
+```
+
+## Subclass and inheritance
+
+- a ruby class definition specifies super class `C < D`, default `D < Object`
+- use built-in reflection to explore class hierarchy
+- every object has method `is_a?` (support subclass) and `instance_of?` (only same)
+
+```ruby
+class Point
+  attr_accessor :x, :y
+  def initialize(x,y)
+    @x = x
+    @y = y
+  end
+  def distFromOrigin
+    Math.sqrt(@x * @x + @y * @y)  # use variable directly
+  end
+  def distFromOrigin2
+    Math.sqrt(x*x + y*y)          # use getter method
+  end
+end
+
+class ColorPoint < Point
+  attr_accessor :color
+  def initialize(x,y,c="clear")
+    super(x,y) # allow overriding method to call method of the same name in superclass first
+    @color = c
+  end
+end
+
+class ThreeDPoint < Point
+  attr_accessor :z
+  def initialize(x,y,z)
+    super(x,y)
+    @z = z
+  end
+  def distFromOrigin
+    d = super
+    Math.sqrt(d*d + @z * @z)
+  end
+  def distFromOrigin2
+    d = super
+    Math.sqrt(d*d + z*z)
+  end
+end
+
+
+class PolarPoint < Point
+  def initialize(r,theta)
+    @r = r
+    @theta = theta
+  end
+  def x
+    @r * Math.cos(@theta)
+  end
+  def y
+    @r * Math.sin(@theta)
+  end
+
+  def x= a
+    b = y # avoids multiple calls to y method
+    @theta = Math.atan(b / a)
+    @r = Math.sqrt(a*a + b*b)
+    self
+  end
+
+  def y= b
+    a = y # avoid multiple calls to y method
+    @theta = Math.atan(b / a)
+    @r = Math.sqrt(a*a + b*b)
+    self
+  end
+
+  def distFromOrigin
+    @r
+  end
+  # distFromOrigin2 already works!!
+end
+```
+
+## The Precise Definition of Method Lookup
+- given a call `e0.m(e1,e2..en)`
+  - what are rules to look up what method definition `m` we call
+  - non-trivial question in presence of overriding
+- in ruby
+  - local variables: not too different from ML & Racket
+  - instance variable, class variable and methods => different
+    - depend on the object bound to `self`
