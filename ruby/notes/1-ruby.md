@@ -494,3 +494,46 @@ This is dynamic disptach, self bound to current env
               (obj-methods pt)))))
 
 ```
+
+- We need a method in a superclass to call a method that is defined/overriden by a subclass
+- define polar points by adding fields and overriding get-x, get-y, set-x, set-y
+  - as with color points, constructor use the superclass constructor
+  - as in Java, polar points still have x,y fields though never use them
+  - for simplicity, we just override methods by putting replacements earlier in the method list
+
+```racket
+(define (make-polar-point _r _th)
+  (let ([pt (make-point #f #f)])
+    (obj
+      (append (list (mcons 'r _r)
+                    (mcons 'theta _th))
+              (obj-fields pt))
+      (append
+        (list
+          (cons 'set-r-theta
+                 (lambda (self args)
+                    (begin
+                        (set self 'r (car args))
+                        (set self 'theta (cadr args)))))
+          (cons 'get-x (lambda (self args)
+                          (let ([r (get self 'r)]
+                                [theta (get self 'theta)])
+                            (* r (cos theta)))))
+          (cons 'get-y (lambda (self args)
+                          (let ([r (get self 'r)]
+                                [theta (get self 'theta)])
+                            (* r (sin theta)))))
+          (cons 'set-x (lambda (self args)
+                          (let* ([a (car args)]
+                                 [b (send self 'get-y)]
+                                 [theta (atan (/ b a))]
+                                 [r (sqrt (+ (* a a) (* b b)))])
+                            (send self 'set-r-theta r theta))))
+          (cons 'set-y (lambda (self args)
+                          (let* ([b (car args)]
+                                 [a (send self 'get-x)]
+                                 [theta (atan (/ b a))]
+                                 [r (sqrt (+ (* a a) (* b b)))])
+                            (send self 'set-r-theta r theta)))))
+        (obj-methods pt)))))
+```
