@@ -73,14 +73,103 @@ fun hasZero e =
 
 
 ```ruby
+class Exp
+  # could put default implementations or helper methods here
+end
 
+class Int < Exp
+  attr_reader :i
+  def initialize i
+    @i = i
+  end
 
+  def eval
+    self
+  end
+
+  def toString
+    @i.to_s
+  end
+
+  def hasZero
+    i==0
+  end
+end
+
+class Negate < Exp
+  attr_reader :e
+  def initialize e
+    @e = e
+  end
+
+  def eval
+    Int.new(-e.eval.i) # error if e.eval has no i method (not an Int)
+  end
+
+  def toString
+    "-(" + e.toString + ")"
+  end
+
+  def hasZero
+    e.hasZero
+  end
+end
+
+class Add < Exp
+  attr_reader :e1, :e2
+
+  def initialize(e1,e2)
+    @e1 = e1
+    @e2 = e2
+  end
+
+  def eval
+    Int.new(e1.eval.i + e2.eval.i) # error if e1.eval or e2.eval have no i method
+  end
+
+  def toString
+    "(" + e1.toString + " + " + e2.toString + ")"
+  end
+
+  def hasZero
+    e1.hasZero || e2.hasZero
+  end
+end
 ```
 
 
+### The Punch-Line
+
+- Just deciding whether to layout our program by column or by row
+- understanding this symmetry is invaluable
+  - in conceptualizing software
+  - or deciding how to decompose a problem
+
+
+- which is better
+  - for our expression problem, functional is popular
+    - more natural to have cases to `eval` together
+    - instead of for `Negate` together
+  - for GUI development, OOP is popular
+    - more natural to have `MenuBar` together
+    - instead of for `doIfMouseIsClicked` togather
 
 
 ## 2. Extending Code with New Operations or Variants
+
+Considering the functional approach
+
+```
+fun noNegConstants e =
+  case e of
+    Int i => if i < 0 then Negate (Int(~i)) else e
+    | Negate e1 => Negate(noNegConstants e1)
+    | Add(e1,e2) => Add(noNegConstants e1, noNegConstants e2)
+```
+
+Add some constants
+
+
 ## 3. Binary Methods with Functional Decomposition
 ## 4. Binary Methods in OOP: Double Dispatch
 ## 5. Multimethods
