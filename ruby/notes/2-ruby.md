@@ -157,8 +157,6 @@ end
 
 ## 2. Extending Code with New Operations or Variants
 
-Considering the functional approach
-
 ```
 fun noNegConstants e =
   case e of
@@ -167,7 +165,37 @@ fun noNegConstants e =
     | Add(e1,e2) => Add(noNegConstants e1, noNegConstants e2)
 ```
 
-Add some constants
+- Considering the functional approach
+  - add a method is easy
+  - add new data variant is less pleasant
+- While the OO Approach opposite
+
+```ruby
+class Mult < Exp
+  attr_reader :e1, :e2
+  def initialize(e1,e2)
+    @e1 = e1
+    @e2 = e2
+  end
+
+  def eval
+    Int.new(e1.eval.i * e2.eval.i) # error if e1.eval or e2.eval has no i method
+  end
+
+  def toString
+    "(" + e1.toString + " * " + e2.toString + ")"
+  end
+
+  def hasZero
+    e1.hasZero || e2.hasZero
+  end
+end
+```
+
+### Planning for extensibility
+
+
+
 
 
 ## 3. Binary Methods with Functional Decomposition
