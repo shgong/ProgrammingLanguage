@@ -194,11 +194,78 @@ end
 
 ### Planning for extensibility
 
+- For OOP, Visitor pattern is aa common approach
+  - implemented with double dispatch
+- For functional
+  - define data type to have other possibilities
+
+```sml
+datatype ’a ext_exp =
+    Int    of int
+  | Negate of ’a ext_exp
+  | Add    of ’a ext_exp * ’a ext_exp
+  | OtherExtExp  of ’a
+
+fun eval_ext (f,e) = (* pass a function to handle extensions *)
+  case e of
+    Int i =>i
+    | Negate e1 => 0 - (eval_ext (f,e1))
+    | Add(e1,e2) => (eval_ext (f,e1)) + (eval_ext (f,e2))
+    | OtherExtExp e => f e
+```
+
+Notes: it does not work to wrap original datatype
+  - does not allow subexpression of `Add` to be `MyMult`
+```ml
+datatype myexp_wrong =
+    OldExp of exp
+  | MyMult of myexp_wrong * myexp_wrong
+```
 
 
+### Problems about extensibility
 
+- the future is often difficult to predict
+  - both forms of extension may be likely
+  - new language like Scala aim to support both extension well
+- making software both robust and extensible is valuable
+  - but difficult
+  - extensibility require original code
+    - more work to develop
+    - harder to reason about locally
+    - harder to change without break extensions
+- language often provide constructs to prevent extensibility
+  - ML's module can hide datatypes
+  - Java final modifier prevent subclasses
 
 ## 3. Binary Methods with Functional Decomposition
+
+- When we have operations take 2+ variants
+  - can apply functional Decomposition
+  - while OOP approach is more cumbersome
+
+```ml
+fun eval e =
+   case e of
+      ...
+     | Add(e1,e2)  => add_values (eval e1, eval e2)
+...
+fun add_values (v1,v2) =
+    case (v1,v2) of
+        (Int i,  Int j)         => Int (i+j)
+      | (Int i,  String s)      => String(Int.toString i ^ s)
+      | (Int i,  Rational(j,k)) => Rational(i*k+j,k)
+      | (String s,  Int i)      => String(s ^ Int.toString i) (* not commutative *)
+      | (String s1, String s2)  => String(s1 ^ s2)
+      | (String s,  Rational(i,j)) => String(s ^ Int.toString i ^ "/" ^ Int.toString j)
+      | (Rational _,    Int _)    => add_values(v2,v1) (* commutative: avoid duplication *)
+      | (Rational(i,j), String s) => String(Int.toString i ^ "/" ^ Int.toString j ^ s)
+      | (Rational(a,b), Rational(c,d)) => Rational(a*d+b*c,b*d)
+      | _ => raise BadResult "non-values passed to add_values"
+```
+
+- if many case works the same way, apply wildcard patterns
+
 ## 4. Binary Methods in OOP: Double Dispatch
 ## 5. Multimethods
 ## 6. Multiple Inheritance
