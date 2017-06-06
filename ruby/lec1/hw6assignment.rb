@@ -68,7 +68,6 @@ class MyBoard < Board
       @score -= 100
     end
   end
-
 end
 
 class MyTetris < Tetris

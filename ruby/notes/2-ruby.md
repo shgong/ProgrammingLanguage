@@ -267,8 +267,118 @@ fun add_values (v1,v2) =
 - if many case works the same way, apply wildcard patterns
 
 ## 4. Binary Methods in OOP: Double Dispatch
+
+- Try to support the same enhancement for `Add` in an OOP style
+- in Add, we write
+
+```ruby
+def eval
+  e1.eval.add_values e2.eval
+end
+```
+
+#### Dispatch
+
+- obligate us to have add_values methods in classes
+- in each class, define
+
+```ruby
+class Int
+  ...
+  def add_values v
+    if v.is_a? Int
+      ...
+    elsif v.is_a? MyRational
+      ...
+    else
+      ...
+    end
+  end
+end
+```
+
+- it is not really OOP
+  - it is a mix of object-oriented decomposition
+    - dynamic dispatch on the first argument
+  - functional decomposition
+    - using is_a? to figure out case in each method
+    - simpler to understand probably
+    - give up extensibility advantages of OOP
+    - NOT "full" OOP
+
+#### Double Dispatch
+```ruby
+class Int
+  ... # other methods not related to add_values
+
+  def add_values v # first dispatch
+    v.addInt self
+  end
+
+  def addInt v # second dispatch: v is Int
+    Int.new(v.i + i)
+  end
+
+  def addString v # second dispatch: v is MyString
+    MyString.new(v.s + i.to_s)
+  end
+
+  def addRational v # second dispatch: v is MyRational
+    MyRational.new(v.i+v.j*i,v.j)
+  end
+end
+```
+
+- We have 9 case for addition in 9 different methods
+- It is not intuitive
+- It is what Ruby/Java must do to support binary operations in OOP style
+
 ## 5. Multimethods
+
+- Not all OOP language require that cumbersome double-dispatch pattern
+  - language with multimethod or multiple dispatch provide more intuitive solution
+- This is a powerful and different semantics
+  - what we studied
+    - the method lookup rules involves the runtime class of receiver
+    - not runtime class of arguments
+  - multiple dispatch
+    - consider class of multiple objects
+- In languages
+  - Ruby does not support, becasue Ruby method name is unique
+  - Java/C++ has multiple methods with same name
+    - but use types of arguments that dtermined at compile time
+    - which is called static overloading
+  - C# has same static overlaoding
+    - v4.0 can use type dynamic to achieve multimethods
+  - __Clojure__ has multimethods
+
 ## 6. Multiple Inheritance
+- Above discussion based on one superclass
+- what if multiple?
+  - Multiple Inheritance
+    - most powerful option
+    - have semantic problems that arise
+    - C++
+  - Mixins
+    - just a pile of methods, many semantic problem go away
+    - elegant uses of mixins typically involve mixin methods calling assumption methods
+    - Ruby
+  - Interfaces
+    - do not provide behavior, only require method existing
+    - fundementally about type checking
+    - Java/C#
+- multiple changes class hierarchy from tree to graph
+- issue with multiple inheritance
+  - need fairly complicated rules for how
+    - subclassing
+    - method lookup
+    - field access
+  - works
+  - C++ have two different forms of creating subclass
+    - one makes copies of all fields from all superclasses
+    - the otehr makes only one copy of fields from same common ancestor
+
+
 ## 7. Mixins
 ## 8. Java/C# Style Interface
 ## 9. Abstract Methods
