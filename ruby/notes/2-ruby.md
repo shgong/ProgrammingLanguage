@@ -380,5 +380,149 @@ end
 
 
 ## 7. Mixins
+
+- To define a Ruby mixin, we use `modeule` instead of `class`
+- Following mixin defines three methods
+  - color
+  - color=
+  - darken
+- class definition can include module later
+
+```ruby
+module Color
+  attr_accessor :color
+  def darken
+    self.color = "dark " + self.color
+  end
+end
+
+class ColorPt < Pt
+  include Color
+end
+```
+
+- initialize (from Pt) does not create @color field
+  - rely on client to call `color=` or first call will get `nil`
+- mixins that use instance variables are stylistically questionable
+  - will be part of object including it
+  - if name conflict, might mutate the same data
+  - after all, mixin is simple, jsut define collection of methods
+
+Method Lookup Rules
+
+- send message m to obj from class C
+- class C
+- mixins in C
+- C's superclass
+- C's superclass' mixins
+- C's super-superclass
+- etc
+
+Many elegant uses of mixins do following strange-sounding thing
+
+- define methods that call other methods on self that are not defined by mixin
+- mixin assumes that all classes that include mixin define this method
+
+```ruby
+module Doubler
+  def double
+    self + self    # uses self's + message, not defined in Doubler
+  end
+end
+
+class AnotherPt
+  attr_accessor :x, :y
+  include Doubler
+
+  def + other # add two points
+    ans = AnotherPt.new
+    ans.x = self.x + other.x
+    ans.y = self.y + other.y
+    ans
+  end
+end
+
+class String
+  include Doubler
+end
+```
+
+
+- The same idea is used a lot in RUby with two mixins named
+  - `Enumerable`
+    - many useful block-taking methods that iterate over some data structure
+    - like any?, map, count, inject, each
+  - `Comparable`
+    - provide methods like =, >=, <=
+    - assume the class define `<=>`
+    - return negative number if left argument less than its right
+
+
+```ruby
+class MyRange
+  include Enumerable
+
+  def initialize(low,high)
+    @low = low
+    @high = high
+  end
+
+  def each
+    i=@low
+    while i <= @high
+      yield i
+      i=i+1
+    end
+  end
+end
+
+MyRange.new(4,8).inject {|x,y| x+y}
+MyRange.new(5,12).count {|i| i.odd?}
+```
+
+```ruby
+class Name
+  attr_accessor :first, :middle, :last
+  include Comparable
+
+  def initialize(first,last,middle="")
+    @first = first
+    @last = last
+    @middle = middle
+  end
+
+  def <=> other
+    l = @last <=> other.last # <=> defined on strings
+    return l if l != 0
+    f = @first <=> other.first
+    return f if f != 0
+    @middle <=> other.middle
+  end
+end
+```
+
 ## 8. Java/C# Style Interface
+
+- a class can have only one immediate supercalss with number of interfaces
+  - interface is list of methods, argument type and return type
+  - class typecheck all method provided
+- it does not define method
+  - nothing about multiple inheritance arise
+  - if two interface have conflict, doesn't matter
+    - a class can stilil implement them both
+- there is no point have interface in dynamically typed language
+  - just pass any object to method
+
+
 ## 9. Abstract Methods
+
+- in statically type languages, purpose of type checking is to prevent method missing errors
+  - indicate guideline in superclass => abstract class
+  - give type of any methods that subclasses must provide => abstract methods
+  - in C++, called pure virtual methods
+
+- interesting parallel between abstract method and high-order-functions
+  - both cases: some code is passed other code in a flexible and reusable way
+  - OOP: different subclasses implment abstract method in different ways
+  - OOP: superclass use them via dynamic dispatch
+  - HOF: different caller provide different implemnetation in function argument body
