@@ -194,7 +194,7 @@ end
 
 ### Planning for extensibility
 
-- For OOP, Visitor pattern is aa common approach
+- For OOP, Visitor pattern is a common approach
   - implemented with double dispatch
 - For functional
   - define data type to have other possibilities
