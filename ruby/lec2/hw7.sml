@@ -216,4 +216,4 @@ fun eval_prog (e,env) =
 	   | SOME (_,v) => v)
       | Let(s,e1,e2) => eval_prog (e2, ((s, eval_prog(e1,env)) :: env))
       | Intersect(e1,e2) => intersect(eval_prog(e1,env), eval_prog(e2, env))
-      | Shift(deltaX, deltaY, e) => shift(deltaX, deltaY, eval_prog(e, env)) 
+      | Shift(deltaX, deltaY, e) => shift(deltaX, deltaY, eval_prog(e, env))
