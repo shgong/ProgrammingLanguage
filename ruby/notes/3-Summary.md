@@ -1,6 +1,6 @@
 # Summary
 
-## Introduction to Subtyping
+## 1. Introduction to Subtyping
 
 ## A Made-Up Language of Records
 
