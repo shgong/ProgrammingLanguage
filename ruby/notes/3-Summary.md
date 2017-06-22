@@ -50,8 +50,6 @@ val five : real = distToOrigin(c)
 - as c has type `{x: real, y:real, color:string}`, it can also have `{x:real, y:real}`
 - the subtype have more information
 
-
-
 ## 4. The Subtyping Relation
 
 
