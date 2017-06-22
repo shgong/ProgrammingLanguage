@@ -104,16 +104,66 @@ fun setToOrigin (c: {center: {x:real, y:real}, r:real}) = c.center = {x=0, y=0}
 
 ## 6. Problem with Java/C# Array Subtyping
 
+- If record fields are mutable, depth subtyping is unsound
+  - then how Java/C# treat Arrays?
 
-## Function Subtyping
+```java
+class Point { ... } // has fields double x, y
+class ColorPoint extends Point { ... } // adds field String color
+...
 
-## Subtyping for OOP
+void m1(Point[] pt_arr) {
+  pt_arr[0] = new Point(3,4);
+}
 
-### Covariant self/this
+String m2(int x) {
+  ColorPoint[] cpt_arr = new ColorPoint[x];
+  for(int i=0; i < x; i++)
+    cpt_arr[i] = new ColorPoint(0,0,"green");
+  m1(cpt_arr);
+  return cpt_arr[0].color;
+}
+```
+
+- Above code will type-check
+- The call `m1(cpt_arr)` use depth subtyping with mutable
+  - `cpt_arr[0].color` will read color field from non-existence
+  - ???
+- `ptr_arr[0] = new Point(3,4)` will raise exception if it is `ColorPoint[]`
+  - ArrayStoreException
+  - having the store raisse exception, so no other exception need run-time checks
+  - object of type `ColorPoint[]` can only hold subtype, no supertype like `Point`
 
 
-## Generics Versus Subtyping
+- Having run-time checks means
+  - the type system is preventing fewer errors
+  - require more care and testing
+  - run-time cost of performing those checks
+- WHY doing THIS
+- for flexibility before generics are introduced
+  - make type system simpler and less at the expense of statically checking less
+  - a better way is combine generics with subtyping
+  - see the bounded polymorphism
 
-## Bounded Polymorphism
+#### null in Java/C#
 
-### Additional Java-Specific Bounded Polymorphism
+- value has no fields or methods
+  - unlike nil in Ruby, it is not even an object
+- instead, Java/C# allow null to have any object type, as though it defines every methods and all fields
+  - which let every field access and method call includes a run-time check for NULL
+  - leading to the NullPointerException
+- WHY designed this way
+  - convenient for initializing a field of type Foo
+  - though you can use option type to do the same thing
+
+## 7. Function Subtyping
+
+## 8. Subtyping for OOP
+
+## 9. Covariant self/this
+
+## 10. Generics Versus Subtyping
+
+## 11. Bounded Polymorphism
+
+### 12. Additional Java-Specific Bounded Polymorphism
