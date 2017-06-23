@@ -170,8 +170,13 @@ String m2(int x) {
 - This rule, combined with reflexivity (t <: t)
   - let us use contravariant arguments, covariant results, or both
 
-
 ## 8. Subtyping for OOP
+
+- an object is basically a record holding fields and methods
+  - assume slots for methods are immutable
+- sound subtyping
+
+
 
 ## 9. Covariant self/this
 
