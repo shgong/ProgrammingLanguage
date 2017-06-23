@@ -158,6 +158,19 @@ String m2(int x) {
 
 ## 7. Function Subtyping
 
+- One function type is a subtype of another function type
+  - as important for understanding how to safely override methods
+
+- If
+  - `t3 <: t1`
+  - `t2 <: t4`
+- then
+  - `t1->t2 <: t3->t4`
+
+- This rule, combined with reflexivity (t <: t)
+  - let us use contravariant arguments, covariant results, or both
+
+
 ## 8. Subtyping for OOP
 
 ## 9. Covariant self/this
