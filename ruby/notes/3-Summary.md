@@ -213,9 +213,40 @@ String m2(int x) {
 
 ## 10. Generics Versus Subtyping
 
+- Generics: parametric polymorphism [T]
+- Subtyping: subtype polymorphism
 
+### Generics good for?
+
+1. There are functions combining other functions
+2. There are functions operate over collections
+```
+val compose: ('b -> 'c) * ('a -> 'b) -> ('b -> 'c)
+
+val length : 'a list -> int
+val map : ('a -> 'b) -> 'a list -> 'b list
+```
+
+If we had to pick non-generic types for these functions, we would end up with significantly less code reuse.
+Generics just says some argument can be anything, we reuse type variable to indicate when multiple things should be same type.
+
+### Subtyping good for?
+
+Subtyping is great for allowing code to be reused with extra information.
+
+Geometry code over points works for colored-points.
+But in ML, `distToOriginal` on a two field record won't type check on three field record
 
 
 ## 11. Bounded Polymorphism
 
-### 12. Additional Java-Specific Bounded Polymorphism
+- Combine the ideas to get even more code reuse and expressiveness
+
+```
+static <T extends Pt> List<T> inCircle(List<T> pts, Pt center, double radius) {
+  List<T> result = new ArrayList<T>();
+  for(T pt : pts)
+    if(pt.distance(center) <= radius)
+      result.add(pt);
+    return result;
+}
