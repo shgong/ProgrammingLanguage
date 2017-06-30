@@ -174,13 +174,47 @@ String m2(int x) {
 
 - an object is basically a record holding fields and methods
   - assume slots for methods are immutable
-- sound subtyping
+- sound subtyping for objects should:
+  - a subtype can have extra fields
+  - subtype can not have different type for a field, because fields are mutable
+  - a subtype can have extra method
+  - subtype can have a subtype for a method, method in subtype can have contravariant argument type and covariant result type
 
+
+- Subtyping in Java/C# includes only
+  - the subtyping explicitly stated via the subclass relationship
+  - the interfaces that classes explicitly indicate they implement
+- this is more restrictive than subtyping requires, because
+  - it does not allow anything it should not
+  - it soundly prevents field missing and method missing errors
+- by
+  - subclass can add fields but not remove
+  - subclass can add methods but not remove
+  - subclass can override method with covariant return type
+  - subclass can implement more methods
+
+- Classes and types are different things!
+  - Java C# confuse them as a matter of convenience
+  - class define object behavior
+  - subclassing inhrits behavior, modify via override
+  - type describes fields object have
+  - subtyping is question of substitutability and what to flag as type error
 
 
 ## 9. Covariant self/this
 
+- Java `this` and Ruby `self` is treated specially from typechecking perspective
+- `this`
+  - is passed as an extra explicit argument to a method
+  - contravariant subtyping, `this` in a subclass could not have a subtype
+- that's why coding up dynamic dispatch work less well in statically typed languages
+  - you need special support in your type system for this
+
+
 ## 10. Generics Versus Subtyping
+
+
+
 
 ## 11. Bounded Polymorphism
 
